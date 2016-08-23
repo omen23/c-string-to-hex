@@ -1,1 +1,8 @@
 # c-string-to-hex
+
+test-run: ./stringtohex 
+Please enter the string to convert: test-run
+The fgets() newline char '\n' was replaced - it is '0a'
+and no '\0' terminator is shown
+Do you want shellcode style output (default)? [y/N]: n
+hex-string in C/LSB order: 746573742d72756e
