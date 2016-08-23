@@ -12,7 +12,7 @@
                 
 int main(void)
 { 
-  unsigned char a[65536]; 
+  char a[65536]; 
   unsigned char answer;
   bool msb = true;
   memset(a, 0, sizeof a); 
@@ -23,8 +23,7 @@ int main(void)
   a[strlen(a) - 1] = 0;
   int val = strlen(a) - 1;
   if (val == -1) main(); /* check for empty value and call main again */
-  puts("The fgets() newline char '\\n' was replaced - it is '0a'\nand no '\\0' terminator is shown");
-  printf("Do you want shellcode style output (default)? [y/N]: ");
+  printf("The fgets() newline char '\\n' was replaced - it is '0a'\nand no '\\0' terminator is shown\nDo you want shellcode style output (default)? [y/N]: ");
   answer = getchar();
   
   if ('n' == tolower(answer)) 
