@@ -23,7 +23,8 @@ int main(void)
   a[strlen(a) - 1] = 0;
   int val = strlen(a) - 1;
   if (val == -1) main(); /* check for empty value and call main again */
-  printf("The fgets() newline char '\\n' was replaced - it is '0a'\nand no '\\0' terminator is shown\nDo you want shellcode style output (default)? [y/N]: ");
+  puts("The fgets() newline char '\\n' was replaced - it is '0a'\nand no '\\0' terminator is shown");
+  printf("Do you want shellcode style output (default)? [y/N]: ");
   answer = getchar();
   
   if ('n' == tolower(answer)) 
