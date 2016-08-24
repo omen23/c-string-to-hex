@@ -22,7 +22,8 @@ int main(void)
   /* remove 0xa (\n) of fgets() */
   a[strlen(a) - 1] = 0;
   val = strlen(a) - 1;
-  if (val == -1) main(); /* check for empty value and call main again */
+  if (val == -1) /* check for empty value and call main again */
+    main(); 
   printf("The fgets() newline char '\\n' was replaced - it is '0a'\nand no '\\0' terminator is shown\nDo you want shellcode style output (default)? [y/N]: ");  
   answer = getchar();
   
