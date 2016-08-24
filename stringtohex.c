@@ -13,10 +13,10 @@ int main(void)
 { 
   
   unsigned char a[65536]; 
-  unsigned char answer;
-  memset(a, 0, sizeof a);
+  unsigned char answer;  
   int i, val;
   
+  memset(a, 0, sizeof a);
   printf("Please enter the string to convert: ");
   assert(fgets(a, sizeof a, stdin) != NULL);    
   /* remove 0xa (\n) of fgets() */
