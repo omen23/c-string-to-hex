@@ -8,39 +8,36 @@
 #include <string.h>
 #include <assert.h>
 #include <errno.h>
-#include <stdbool.h>
                 
 int main(void)
 { 
+  
   unsigned char a[65536]; 
   unsigned char answer;
-  bool msb = true;
-  memset(a, 0, sizeof a); 
-    
+  memset(a, 0, sizeof a);
+  int val;
+  
   printf("Please enter the string to convert: ");
-  assert(fgets(a, sizeof a, stdin) != NULL);  
+  assert(fgets(a, sizeof a, stdin) != NULL);    
   /* remove 0xa (\n) of fgets() */
   a[strlen(a) - 1] = 0;
-  int val = strlen(a) - 1;
+  val = strlen(a) - 1;
   if (val == -1) main(); /* check for empty value and call main again */
-  printf("The fgets() newline char '\\n' was replaced - it is '0a'\nand no '\\0' terminator is shown\nDo you want shellcode style output (default)? [y/N]: ");
+  printf("The fgets() newline char '\\n' was replaced - it is '0a'\nand no '\\0' terminator is shown\nDo you want shellcode style output (default)? [y/N]: ");  
   answer = getchar();
   
   if ('n' == tolower(answer)) 
-    msb = false;
-
-  if (msb) 
-  {
-    printf("hex-string in shellcode style/MSB order: ");
-    for (int i = val; i >= 0; i--)
-      printf("%02x", *(a + i));     
-  }
-  else 
   {     
     printf("hex-string in C/LSB order: ");
     for (int i = 0; i <= val; i++) 
       printf("%02x", a[i]);                
-  }  
+  } 
+  else   
+  {
+    printf("hex-string in shellcode style/MSB order: ");
+    for (int i = val; i >= 0; i--)
+      printf("%02x", *(a + i));     
+  }   
   putchar('\n');  
   /* false [0] if no errors occured, otherwise positive value */
   return errno != 0;
