@@ -12,7 +12,7 @@
                 
 int main(void)
 { 
-  char a[65536]; 
+  unsigned char a[65536]; 
   unsigned char answer;
   bool msb = true;
   memset(a, 0, sizeof a); 
