@@ -15,7 +15,7 @@ int main(void)
   unsigned char a[65536]; 
   unsigned char answer;
   memset(a, 0, sizeof a);
-  int val;
+  int i, val;
   
   printf("Please enter the string to convert: ");
   assert(fgets(a, sizeof a, stdin) != NULL);    
@@ -29,13 +29,13 @@ int main(void)
   if ('n' == tolower(answer)) 
   {     
     printf("hex-string in C/LSB order: ");
-    for (int i = 0; i <= val; i++) 
+    for (i = 0; i <= val; i++) 
       printf("%02x", a[i]);                
   } 
   else   
   {
     printf("hex-string in shellcode style/MSB order: ");
-    for (int i = val; i >= 0; i--)
+    for (i = val; i >= 0; i--)
       printf("%02x", *(a + i));     
   }   
   putchar('\n');  
