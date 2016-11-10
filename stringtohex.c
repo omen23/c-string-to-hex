@@ -1,7 +1,8 @@
-/* file: stringtohex.c
-*  by omen23 (c) 2016
-*  print strings in hex
-*/
+/*  
+ *  file: stringtohex.c
+ *  by omen23 © 2016
+ *  print strings in hex
+ */
 
 #include <stdio.h>
 #include <ctype.h>
